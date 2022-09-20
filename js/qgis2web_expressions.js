@@ -757,7 +757,7 @@ function fnc_project_color(values, context) {
 
 
 
-function exp_label_STOPSITE_POINTS_IKN_2_eval_expression(context) {
+function exp_label_STOPSITE_POINTS_IKN_3_eval_expression(context) {
     // 'DAY ' + "DAY" + ' ' + 'STOP ' + "STOP" + ':' + '\n' + "STOPSITE"
 
     var feature = context.feature;
@@ -770,7 +770,7 @@ function exp_label_STOPSITE_POINTS_IKN_2_eval_expression(context) {
 }
 
 
-function exp_label_STOPSITE_POINTS_MAHAKAM_3_eval_expression(context) {
+function exp_label_STOPSITE_POINTS_MAHAKAM_4_eval_expression(context) {
     // 'DAY ' + "DAY" + ' STOP ' + "id" + '\n' + "STOPSITE"
 
     var feature = context.feature;
