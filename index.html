@@ -55,7 +55,7 @@
             }
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:17, minZoom:8
+            zoomControl:true, maxZoom:17, minZoom:11
         }).fitBounds([[-1.2704288257589673,115.96832076414704],[-0.5254223269385373,117.72515490953934]]);
         L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=GfPVQUJXOR9JQaIVp55T', {
             attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
@@ -515,7 +515,7 @@
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Area'] !== null?String('<div style="color: #ffffff; font-size: 15pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Area']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_IKN_2'});
+            layer.bindTooltip((layer.feature.properties['Area'] !== null?String('<div style="color: #000000; font-size: 15pt; font-weight: bold; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['Area']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_IKN_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
