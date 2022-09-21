@@ -469,7 +469,7 @@
                     </tr>\
                     <tr>\
                         <th scope="row">LINK</th>\
-                        <td>' + (feature.properties['LINK'] !== null ? autolinker.link(feature.properties['LINK'].toLocaleString(), {
+                        <td>' + (feature.properties['LINK'] !== null ? Autolinker.link(feature.properties['LINK'].toLocaleString(), {
                             replaceFn : function ( match ) {
                                 var tag = match.buildTag();
                                 tag.setInnerHtml ('Click Here');
