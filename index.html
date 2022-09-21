@@ -272,7 +272,7 @@
                         e.target._eventParents[i].resetStyle(e.target);
                     }
                 },
-                //mouseover: highlightFeature,
+               // mouseover: highlightFeature,
             });
             var popupContent = '<table>\
                     <tr>\
@@ -282,7 +282,7 @@
                         <td colspan="2"><strong>Area</strong><br />' + (feature.properties['Area'] !== null ? autolinker.link(feature.properties['Area'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            // layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
         function style_IKN_2_0(feature) {
@@ -299,7 +299,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(159,123,221,1.0)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'K-IKN':
@@ -314,7 +314,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(77,172,236,1.0)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'KIPP':
@@ -329,7 +329,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(231,36,43,1.0)',
-                interactive: true,
+                interactive: false,
             }
                     break;
                 case 'KP-IKN':
@@ -344,7 +344,7 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(224,136,152,1.0)',
-                interactive: true,
+                interactive: false,
             }
                     break;
             }
