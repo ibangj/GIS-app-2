@@ -55,7 +55,7 @@
             }
         }
         var map = L.map('map', {
-            zoomControl:true, maxZoom:17, minZoom:11
+            zoomControl:true, maxZoom:17, minZoom:10
         }).fitBounds([[-1.2704288257589673,115.96832076414704],[-0.5254223269385373,117.72515490953934]]);
         L.tileLayer('https://api.maptiler.com/tiles/satellite-v2/{z}/{x}/{y}.jpg?key=GfPVQUJXOR9JQaIVp55T', {
             attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
@@ -508,7 +508,7 @@
         cluster_STOPSITE_POINTS_MAHAKAM_4.addTo(map);
         var baseMaps = {};
         L.control.layers(baseMaps,{'<img src="legend/STOPSITE_POINTS_MAHAKAM_4.png" /> STOPSITE_POINTS_MAHAKAM': cluster_STOPSITE_POINTS_MAHAKAM_4,'<img src="legend/STOPSITE_POINTS_IKN_3.png" /> STOPSITE_POINTS_IKN': cluster_STOPSITE_POINTS_IKN_3,'IKN<br /><table><tr><td style="text-align: center;"><img src="legend/IKN_2_0.png" /></td><td></td></tr><tr><td style="text-align: center;"><img src="legend/IKN_2_KIKN1.png" /></td><td>K-IKN</td></tr><tr><td style="text-align: center;"><img src="legend/IKN_2_KIPP2.png" /></td><td>KIPP</td></tr><tr><td style="text-align: center;"><img src="legend/IKN_2_KPIKN3.png" /></td><td>KP-IKN</td></tr></table>': layer_IKN_2,'<img src="legend/Str_Kaltim_1.png" /> Str_Kaltim': layer_Str_Kaltim_1,'LITOLOGI_KALTIM<br /><table><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_BalikpapanFormation0.png" /></td><td>Balikpapan Formation</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_AlluvialDeposits1.png" /></td><td>Alluvial Deposits</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_BebuluhFormation2.png" /></td><td>Bebuluh Formation</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_KampungbaruFormation3.png" /></td><td>Kampungbaru Formation</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_PalaubalangFormation4.png" /></td><td>Palaubalang Formation</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_PamaluanFormation5.png" /></td><td>Pamaluan Formation</td></tr><tr><td style="text-align: center;"><img src="legend/LITOLOGI_KALTIM_0_BebuluFormation6.png" /></td><td>Bebulu Formation</td></tr></table>': layer_LITOLOGI_KALTIM_0,}).addTo(map);
-        setBounds();
+        // setBounds();
         var i = 0;
         layer_IKN_2.eachLayer(function(layer) {
             var context = {
