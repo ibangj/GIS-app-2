@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <link rel="stylesheet" href="css/MarkerCluster.css">
         <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+
         <style>
         html, body, #map {
             width: 100%;
@@ -38,6 +39,14 @@
         <script src="data/IKN_2.js"></script>
         <script src="data/STOPSITE_POINTS_IKN_3.js"></script>
         <script src="data/STOPSITE_POINTS_MAHAKAM_4.js"></script>
+        <!--Slider Timeline-->
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+        <script src="js/leaflet-timeline-slider.min.js"></script>
+        <!--End Here-->
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -46,11 +55,13 @@
             if (e.target.feature.geometry.type === 'LineString') {
               highlightLayer.setStyle({
                 color: '#ffff00',
+                opacity: 1
               });
             } else {
               highlightLayer.setStyle({
                 fillColor: '#ffff00',
-                fillOpacity: 1
+                fillOpacity: 1,
+                opacity: 1
               });
             }
         }
@@ -63,7 +74,9 @@
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker(/*{truncate: {length: 30, location: 'smart'}, newWindow: false}*/);
-    
+        
+               
+
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
@@ -363,6 +376,8 @@
         });
         bounds_group.addLayer(layer_IKN_2);
         map.addLayer(layer_IKN_2);
+
+
         function pop_STOPSITE_POINTS_IKN_3(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -371,6 +386,11 @@
                     }
                 },
                 mouseover: highlightFeature,
+               /* mouseover: function(e) {
+                    e.target.setStyle({
+                        opacity: 1
+                    })
+                }*/
             });
             var popupContent = '<table>\
                     <tr>\
@@ -405,6 +425,7 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
+
         function style_STOPSITE_POINTS_IKN_3_0() {
             return {
                 pane: 'pane_STOPSITE_POINTS_IKN_3',
@@ -436,7 +457,8 @@
                     feature: feature,
                     variables: {}
                 };
-                return L.circleMarker(latlng, style_STOPSITE_POINTS_IKN_3_0(feature));
+                return L.circleMarker(latlng, style_STOPSITE_POINTS_IKN_3_0(feature)); //Kita matiin dulu, ganti pake marker aja
+                return icon_IKN;
             },
         });
         var cluster_STOPSITE_POINTS_IKN_3 = new L.MarkerClusterGroup({showCoverageOnHover: false,
@@ -445,6 +467,8 @@
 
         bounds_group.addLayer(layer_STOPSITE_POINTS_IKN_3);
         cluster_STOPSITE_POINTS_IKN_3.addTo(map);
+
+
         function pop_STOPSITE_POINTS_MAHAKAM_4(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -575,6 +599,12 @@
         map.on("layerremove", function(){
             resetLabels([layer_IKN_2,layer_STOPSITE_POINTS_IKN_3,layer_STOPSITE_POINTS_MAHAKAM_4]);
         });
+
+        
         </script>
     </body>
 </html>
+
+<!-- Changes: 
+Added Timeline Slider
+Change icon of IKN Stopsites-->
